@@ -87,6 +87,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  # GCSの画像保存先バケット名
+  config.gcs_bucket_name = "DUMMY_BUCKET_NAME_PRD"
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
