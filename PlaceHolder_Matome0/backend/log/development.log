@@ -1,0 +1,241 @@
+  [1m[35m (35.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-03 02:28:46.749227', '2025-04-03 02:28:46.749229') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20250402085238)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "published_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250402085238') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (65.2ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-03 02:35:01.177299', '2025-04-03 02:35:01.177301') RETURNING "key"[0m
+Migrating to CreateArticles (20250402085238)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "content" text, "published_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250402085238') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (14.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_development"[0m
+  [1m[35m (14.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_test"[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE DATABASE "backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-03 03:09:35.208100', '2025-04-03 03:09:35.208102') RETURNING "key"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateArticles (20250403000000)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying NOT NULL, "content" text, "slug" character varying NOT NULL, "status" character varying DEFAULT 'draft', "category" character varying, "author" character varying, "published_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_articles_on_slug" ON "articles" ("slug")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_articles_on_published_at" ON "articles" ("published_at")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_articles_on_status" ON "articles" ("status")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_articles_on_category" ON "articles" ("category")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250403000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArticleMetadata (20250403000001)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "article_metadata" ("id" bigserial primary key, "article_id" bigint NOT NULL, "summary" text, "image_url" character varying, "thumbnail_url" character varying, "tags" character varying, "view_count" integer DEFAULT 0, "reading_time" integer, "featured" boolean DEFAULT FALSE, "comment_enabled" boolean DEFAULT TRUE, "meta_title" character varying, "meta_description" text, "source_url" character varying, "is_premium" boolean DEFAULT FALSE, "published_by" integer, "last_modified_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_5a22bea32e"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_article_id" ON "article_metadata" ("article_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_featured" ON "article_metadata" ("featured")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_is_premium" ON "article_metadata" ("is_premium")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_view_count" ON "article_metadata" ("view_count")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250403000001') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleMetadata Load (0.8ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata"[0m
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "html-elements-test"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "さまざまなHTML要素を含むテスト記事"], ["content", "<h1>大見出し (H1) のサンプル</h1><p>これは通常の段落テキストです。基本的な<strong>強調表示</strong>や<em>イタリック</em>を含んでいます。</p><h2>中見出し (H2) のサンプル</h2><p>ここでは別の段落を示しています。</p>"], ["slug", "html-elements-test"], ["status", "published"], ["category", "テスト"], ["author", "開発者"], ["published_at", "2025-03-29 03:36:58.551326"], ["created_at", "2025-04-03 03:36:58.591977"], ["updated_at", "2025-04-03 03:36:58.591977"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "ai-mindwave-technology"], ["LIMIT", 1]]
+  [1m[36mArticle Create (1.0ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "新型AI「MindWave」が人間の思考を理解する新技術を開発"], ["content", "<h1>新型AI技術の開発</h1><p>テクノロジーの進化についての記事です。</p>"], ["slug", "ai-mindwave-technology"], ["status", "published"], ["category", "テクノロジー"], ["author", "山本太郎"], ["published_at", "2025-04-01 03:36:58.595477"], ["created_at", "2025-04-03 03:36:58.598331"], ["updated_at", "2025-04-03 03:36:58.598331"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "new-deep-sea-creature"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "南太平洋で新種の深海生物を発見"], ["content", "<h1>深海生物の発見</h1><p>科学的発見についての記事です。</p>"], ["slug", "new-deep-sea-creature"], ["status", "published"], ["category", "科学"], ["author", "鈴木海"], ["published_at", "2025-04-02 03:36:58.602733"], ["created_at", "2025-04-03 03:36:58.605374"], ["updated_at", "2025-04-03 03:36:58.605374"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "climate-change-draft"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "地球温暖化対策における最新技術トレンド【執筆中】"], ["content", "<h1>地球温暖化対策</h1><p>執筆中の記事です。</p>"], ["slug", "climate-change-draft"], ["status", "draft"], ["category", "環境"], ["author", "緑川エコ"], ["published_at", nil], ["created_at", "2025-04-03 03:36:58.613010"], ["updated_at", "2025-04-03 03:36:58.613010"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 1], ["summary", "このテスト記事ではさまざまなHTML要素（見出し、段落、リスト、表など）の表示を確認できます。"], ["image_url", "/images/test-article-main.jpg"], ["thumbnail_url", "/images/test-article-thumb.jpg"], ["tags", "テスト,HTML,マークアップ,開発"], ["view_count", 0], ["reading_time", 3], ["featured", true], ["comment_enabled", true], ["meta_title", "HTML要素テスト - フロントエンド開発者向け"], ["meta_description", "この記事はHTML要素の表示テスト用に作成されました。さまざまなマークアップ要素を含んでいます。"], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 03:36:58.823686"], ["updated_at", "2025-04-03 03:36:58.823686"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleMetadata Load (0.9ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Destroy (1.3ms)[0m  [1m[31mDELETE FROM "article_metadata" WHERE "article_metadata"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Load (0.3ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Load (0.3ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Destroy (0.3ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Load (0.2ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Destroy (0.3ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Load (0.2ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 4], ["LIMIT", 1]]
+  [1m[36mArticle Destroy (0.3ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "html-test"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "HTML要素テスト記事"], ["content", "<h1>テスト見出し</h1><p>テスト段落</p>"], ["slug", "html-test"], ["status", "published"], ["category", "テスト"], ["author", "開発者"], ["published_at", "2025-04-03 03:45:39.026595"], ["created_at", "2025-04-03 03:45:39.030218"], ["updated_at", "2025-04-03 03:45:39.030218"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 5], ["summary", "HTML要素のテスト記事です"], ["image_url", nil], ["thumbnail_url", nil], ["tags", "テスト,HTML"], ["view_count", 0], ["reading_time", 3], ["featured", false], ["comment_enabled", true], ["meta_title", nil], ["meta_description", nil], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 03:45:39.037003"], ["updated_at", "2025-04-03 03:45:39.037003"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCACHE Article Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mCACHE ArticleMetadata Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (13.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_development"[0m
+  [1m[35m (12.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend_test"[0m
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE DATABASE "backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-03 03:46:05.386689', '2025-04-03 03:46:05.386691') RETURNING "key"[0m
+Migrating to CreateArticles (20250403000000)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying NOT NULL, "content" text, "slug" character varying NOT NULL, "status" character varying DEFAULT 'draft', "category" character varying, "author" character varying, "published_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_articles_on_slug" ON "articles" ("slug")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_articles_on_published_at" ON "articles" ("published_at")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_articles_on_status" ON "articles" ("status")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_articles_on_category" ON "articles" ("category")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250403000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateArticleMetadata (20250403000001)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "article_metadata" ("id" bigserial primary key, "article_id" bigint NOT NULL, "summary" text, "image_url" character varying, "thumbnail_url" character varying, "tags" character varying, "view_count" integer DEFAULT 0, "reading_time" integer, "featured" boolean DEFAULT FALSE, "comment_enabled" boolean DEFAULT TRUE, "meta_title" character varying, "meta_description" text, "source_url" character varying, "is_premium" boolean DEFAULT FALSE, "published_by" integer, "last_modified_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_5a22bea32e"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_article_id" ON "article_metadata" ("article_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_featured" ON "article_metadata" ("featured")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_is_premium" ON "article_metadata" ("is_premium")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_article_metadata_on_view_count" ON "article_metadata" ("view_count")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250403000001') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleMetadata Load (0.9ms)[0m  [1m[34mSELECT "article_metadata".* FROM "article_metadata"[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "html-elements-test"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "さまざまなHTML要素を含むテスト記事"], ["content", "\n    <h1>大見出し (H1) のサンプル</h1>\n    <p>これは通常の段落テキストです。基本的な<strong>強調表示</strong>や<em>イタリック</em>を含んでいます。また、<a href=\"#\">リンク</a>もテストしています。</p>\n    <h2>中見出し (H2) のサンプル</h2>\n    <p>ここでは別の段落を示しています。文章の途中で<br>改行を入れることもできます。</p>\n    <h3>小見出し (H3) のサンプル</h3>\n    <ul>\n      <li>リストアイテム 1</li>\n      <li>リストアイテム 2</li>\n      <li>リストアイテム 3 - さらに長いテキストでリストアイテムの表示をテストしています。</li>\n    </ul>\n    <h2>引用とコードのテスト</h2>\n    <blockquote>これは引用文です。著名な言葉や参考文献からの引用をこのように表示できます。</blockquote>\n    <pre><code>// これはコードブロックです\nfunction testFunction() {\n  console.log(\"Hello, World!\");\n}\n</code></pre>\n    <h2>画像テスト</h2>\n    <figure>\n      <img src=\"/images/sample.jpg\" alt=\"サンプル画像の代替テキスト\">\n      <figcaption>画像のキャプション例</figcaption>\n    </figure>\n    <h2>表のテスト</h2>\n    <table>\n      <thead>\n        <tr><th>ヘッダー1</th><th>ヘッダー2</th><th>ヘッダー3</th></tr>\n      </thead>\n      <tbody>\n        <tr><td>行1, セル1</td><td>行1, セル2</td><td>行1, セル3</td></tr>\n        <tr><td>行2, セル1</td><td>行2, セル2</td><td>行2, セル3</td></tr>\n      </tbody>\n    </table>\n    <h2>まとめ</h2>\n    <p>これはさまざまなHTML要素の表示をテストするための記事でした。</p>\n  "], ["slug", "html-elements-test"], ["status", "published"], ["category", "テスト"], ["author", "開発者"], ["published_at", "2025-03-29 04:00:30.652951"], ["created_at", "2025-04-03 04:00:30.665657"], ["updated_at", "2025-04-03 04:00:30.665657"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "ai-mindwave-understands-human-thoughts"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "新型AI「MindWave」が人間の思考を理解する新技術を開発"], ["content", "\n    <h1>新型AI「MindWave」が人間の思考を理解する新技術を開発</h1>\n    <p class=\"lead\">テクノロジー企業TechFrontierは本日、人間の思考パターンをリアルタイムで分析できる革新的なAIシステム「MindWave」を発表しました。</p>\n    <h2>脳波解析の新たなブレイクスルー</h2>\n    <p>MindWaveは非侵襲的な脳波スキャン技術と最先端の機械学習アルゴリズムを組み合わせることで、ユーザーの思考パターンを95%以上の精度で解読することができます。</p>\n    <h2>医療分野での応用に期待</h2>\n    <p>専門家たちはこの技術が特に医療分野で大きな可能性を秘めていると指摘しています。</p>\n    <blockquote>「コミュニケーション障害を持つ患者さんのための革命的なツールになる可能性があります。」</blockquote>\n    <h2>倫理的な懸念も</h2>\n    <p>一方で、プライバシーや倫理に関する懸念も表明されています。</p>\n    <h2>市場投入計画</h2>\n    <p>MindWaveは来年初頭に医療向けバージョンが限定的にリリースされる予定です。</p>\n  "], ["slug", "ai-mindwave-understands-human-thoughts"], ["status", "published"], ["category", "テクノロジー"], ["author", "山本太郎"], ["published_at", "2025-04-01 04:00:30.673594"], ["created_at", "2025-04-03 04:00:30.676113"], ["updated_at", "2025-04-03 04:00:30.676113"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "new-deep-sea-creature-discovered"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "南太平洋で新種の深海生物「ルミナス・アビサリス」を発見"], ["content", "\n    <h1>南太平洋で新種の深海生物「ルミナス・アビサリス」を発見</h1>\n    <p class=\"lead\">国際海洋調査チームは、マリアナ海溝近くの水深8,200メートルで、これまでに見たことのない発光する深海生物を発見しました。</p>\n    <h2>前例のない生物学的特徴</h2>\n    <p>全長約30センチのルミナス・アビサリスは、透明なゼラチン質の体と、驚くべき発光能力を持っています。体全体が7色に輝き、その光のパターンは複雑なシーケンスで変化することが観測されました。</p>\n    <figure>\n      <img src=\"/images/luminous-abyssalis.jpg\" alt=\"ルミナス・アビサリスの発光の様子\">\n      <figcaption>深海探査機が撮影したルミナス・アビサリスの発光の様子</figcaption>\n    </figure>\n    <h2>進化の謎</h2>\n    <p>この生物のDNA分析結果には、これまで地球上で確認されていないパターンが含まれています。</p>\n    <h2>今後の研究計画</h2>\n    <p>研究チームはより詳細な解析と生理学的研究を進める予定です。</p>\n  "], ["slug", "new-deep-sea-creature-discovered"], ["status", "published"], ["category", "科学"], ["author", "鈴木海"], ["published_at", "2025-04-02 04:00:30.678670"], ["created_at", "2025-04-03 04:00:30.680700"], ["updated_at", "2025-04-03 04:00:30.680700"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "climate-change-technology-trends-draft"], ["LIMIT", 1]]
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "content", "slug", "status", "category", "author", "published_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "地球温暖化対策における最新技術トレンド【執筆中】"], ["content", "\n    <h1>地球温暖化対策における最新技術トレンド</h1>\n    <p class=\"lead\">※この記事は現在執筆中です※</p>\n    <h2>二酸化炭素の直接回収技術</h2>\n    <p>（ここに内容を追加予定）</p>\n    <h2>再生可能エネルギーの統合型ソリューション</h2>\n    <p>（ここに内容を追加予定）</p>\n  "], ["slug", "climate-change-technology-trends-draft"], ["status", "draft"], ["category", "環境"], ["author", "緑川エコ"], ["published_at", nil], ["created_at", "2025-04-03 04:00:30.686233"], ["updated_at", "2025-04-03 04:00:30.686233"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 1], ["summary", "このテスト記事ではさまざまなHTML要素（見出し、段落、リスト、表など）の表示を確認できます。"], ["image_url", "/images/test-article-main.jpg"], ["thumbnail_url", "/images/test-article-thumb.jpg"], ["tags", "テスト,HTML,マークアップ,開発"], ["view_count", 0], ["reading_time", 3], ["featured", true], ["comment_enabled", true], ["meta_title", "HTML要素テスト - フロントエンド開発者向け"], ["meta_description", "この記事はHTML要素の表示テスト用に作成されました。さまざまなマークアップ要素を含んでいます。"], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 04:00:30.710711"], ["updated_at", "2025-04-03 04:00:30.710711"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 2], ["summary", "テクノロジー企業TechFrontierが開発した新型AI「MindWave」は人間の思考を高精度で理解できる画期的な技術として注目を集めています。"], ["image_url", "/images/mindwave-main.jpg"], ["thumbnail_url", "/images/mindwave-thumb.jpg"], ["tags", "AI,テクノロジー,脳科学,医療,倫理"], ["view_count", 1250], ["reading_time", 5], ["featured", true], ["comment_enabled", true], ["meta_title", "MindWave: 思考を読み取る革新的AI技術"], ["meta_description", "人間の思考を理解するAI「MindWave」の最新技術と応用分野、倫理的懸念について解説します。"], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 04:00:30.717543"], ["updated_at", "2025-04-03 04:00:30.717543"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 3], ["summary", "マリアナ海溝で発見された新種の発光深海生物「ルミナス・アビサリス」は、地球上で確認されていない遺伝パターンを持ち科学界に衝撃を与えています。"], ["image_url", "/images/deep-sea-creature-main.jpg"], ["thumbnail_url", "/images/deep-sea-creature-thumb.jpg"], ["tags", "海洋生物学,深海,新種発見,科学ニュース,マリアナ海溝"], ["view_count", 3200], ["reading_time", 6], ["featured", true], ["comment_enabled", true], ["meta_title", "新種の深海生物「ルミナス・アビサリス」の驚くべき特徴"], ["meta_description", "未知の生物「ルミナス・アビサリス」の特徴と科学的意義について解説。"], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 04:00:30.722016"], ["updated_at", "2025-04-03 04:00:30.722016"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticleMetadata Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "article_metadata" WHERE "article_metadata"."article_id" = $1 LIMIT $2[0m  [["article_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "article_metadata" ("article_id", "summary", "image_url", "thumbnail_url", "tags", "view_count", "reading_time", "featured", "comment_enabled", "meta_title", "meta_description", "source_url", "is_premium", "published_by", "last_modified_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17) RETURNING "id"[0m  [["article_id", 4], ["summary", "地球温暖化対策として注目される最新技術トレンドをまとめた記事です。"], ["image_url", nil], ["thumbnail_url", nil], ["tags", "気候変動,テクノロジー,サステナビリティ,カーボンニュートラル"], ["view_count", 0], ["reading_time", 8], ["featured", false], ["comment_enabled", true], ["meta_title", "2025年注目の気候変動対策技術トレンド分析"], ["meta_description", "地球温暖化対策として開発が進む最新技術トレンドを紹介。"], ["source_url", nil], ["is_premium", false], ["published_by", nil], ["last_modified_by", nil], ["created_at", "2025-04-03 04:00:30.726264"], ["updated_at", "2025-04-03 04:00:30.726264"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCACHE Article Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mCACHE ArticleMetadata Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
