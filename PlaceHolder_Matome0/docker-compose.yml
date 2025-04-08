@@ -22,6 +22,7 @@ services:
         bundle exec rails server -p 3001 -b '0.0.0.0'
       "
     volumes:
+      - ./backend:/app
       - .:/app
     ports:
       - "3001:3001"
@@ -29,6 +30,7 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://postgres:password@db:5432/backend_development
+      GOOGLE_APPLICATION_CREDENTIALS: /rails/config/credential/digest-with-ai-54977c53d6a2.json
       RAILS_ENV: development
 
   frontend:
