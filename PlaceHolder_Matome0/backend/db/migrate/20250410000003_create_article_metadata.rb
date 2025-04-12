@@ -25,4 +25,3 @@ class CreateArticleMetadata < ActiveRecord::Migration[6.1]
       add_index :article_metadata, :view_count
     end
   end
-  

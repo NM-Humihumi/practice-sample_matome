@@ -6,8 +6,7 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :status, default: 'draft'
       t.string :author
       t.datetime :published_at
-      t.text :digest, null: false, comment: "複数行の要約コンテンツ（本文）"
-      t.references :discussion, foreign_key: true, comment: "ディスカッションとの1対1の関連"
+      t.text :digest, null: false
 
       t.timestamps
     end
