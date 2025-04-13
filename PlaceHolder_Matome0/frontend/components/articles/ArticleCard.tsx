@@ -15,13 +15,13 @@ interface ArticleCardProps {
     metadata?: {
       thumbnail_url?: string | null;
     };
-    discussion_messages?: Array<{
+    discussion_messages?: {
       content: string;
       position: number;
       speaker?: {
         display_name: string;
       };
-    }>[];
+    }[];
   };
 }
 
@@ -33,7 +33,11 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
   const comments = article.discussion_messages
     ? article.discussion_messages
-        .sort((a, b) => a.position - b.position)
+        .sort((a, b) => {
+          const aPos = a.position ?? 0;
+          const bPos = b.position ?? 0;
+          return aPos - bPos;
+        })
         .slice(0, 2)
     : [];
 
