@@ -5,15 +5,17 @@ discussion_messages = [
   { article_id: 3, speaker_id: 1, content: "スポーツの未来はテクノロジーによって大きく変わるでしょう。", position: 1 }
 ]
 
-discussion_messages.each do |data|
+discussion_messages.each do |data| 
   discussion = Discussion.find_by(article_id: data[:article_id])
   next unless discussion
 
-  DiscussionMessage.find_or_create_by!(
-    discussion_id: discussion.id,
-    speaker_id: data[:speaker_id],
-    position: data[:position]
-  ) do |message|
-    message.content = data[:content]
+  unless DiscussionMessage.exists?(discussion_id: discussion.id, speaker_id: data[:speaker_id], position: data[:position])  # 既存のデータを確認
+    DiscussionMessage.find_or_create_by!(
+      discussion_id: discussion.id,
+      speaker_id: data[:speaker_id],
+      position: data[:position]
+    ) do |message|
+      message.content = data[:content]
+    end
   end
 end

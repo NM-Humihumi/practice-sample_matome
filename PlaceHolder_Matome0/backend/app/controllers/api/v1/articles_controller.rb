@@ -23,24 +23,44 @@ module Api
 
       # GET /api/v1/articles
       def index
-        @articles = Article.includes(:article_metadata, :discussion, :article_categories).all
+        @articles = Article.includes([
+          :article_metadata,
+          :article_categories,
+          { discussion: :discussion_messages }
+        ]).all
+      
         render json: @articles.as_json(
-          include: [
-            :article_metadata,
-            :discussion,
-            { article_categories: { only: [:id, :name, :slug] } }
-          ]
+          only: [:id, :title, :slug, :published_at, :digest],
+          include: {
+            article_metadata: {},
+            article_categories: { only: [:id, :name, :slug] },
+            discussion: {
+              include: {
+                discussion_messages: {
+                  only: [:content, :position]
+                }
+              }
+            }
+          }
         )
       end
+      
 
       # GET /api/v1/articles/1
       def show
         render json: @article.as_json(
-          include: [
-            :article_metadata,
-            :discussion,
-            { article_categories: { only: [:id, :name, :slug] } }
-          ]
+          only: [:id, :title, :slug, :published_at, :digest],
+          include: {
+            article_metadata: {},
+            article_categories: { only: [:id, :name, :slug] },
+            discussion: {
+              include: {
+                discussion_messages: {
+                  only: [:content, :position]
+                }
+              }
+            }
+          }
         )
       end
 

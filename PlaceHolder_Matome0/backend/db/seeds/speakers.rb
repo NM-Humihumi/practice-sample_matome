@@ -3,9 +3,11 @@ speakers = [
   # 他のスピーカーを追加する場合はここに記述
 ]
 
-speakers.each do |speaker_data|
-  Speaker.find_or_create_by!(name: speaker_data[:name]) do |speaker|
-    speaker.color_code = speaker_data[:color_code]
-    # その他のカラムはデフォルト(nil)のままでOK
+speakers.each do |speaker_data| 
+  unless Speaker.exists?(name: speaker_data[:name])  # 既存のデータを確認
+    Speaker.find_or_create_by!(name: speaker_data[:name]) do |speaker|
+      speaker.color_code = speaker_data[:color_code]
+      # その他のカラムはデフォルト(nil)のままでOK
+    end 
   end
 end

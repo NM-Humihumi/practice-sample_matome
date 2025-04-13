@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   has_one :article_metadata, dependent: :destroy
+  has_one :discussion, dependent: :destroy
   has_many :article_categories, dependent: :destroy
   has_many :categories, through: :article_categories
 

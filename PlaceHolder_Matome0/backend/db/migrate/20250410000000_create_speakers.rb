@@ -1,8 +1,9 @@
 class CreateSpeakers < ActiveRecord::Migration[6.1]
   def change
     create_table :speakers do |t|
-      t.string :name, null: false
-      t.string :color_code   # 発言の色などに使える
+      t.string :name, null: false                     # 内部名（識別用）
+      t.string :display_name                         # 表示用名称 ← 追加！
+      t.string :color_code                           # 発言の色などに使える
       t.string :default_icon_url
       t.string :character_sheet_url
 

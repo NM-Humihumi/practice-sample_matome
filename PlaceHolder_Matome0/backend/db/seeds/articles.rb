@@ -42,6 +42,15 @@ articles = [
   }
 ]
 
-articles.each do |article_data|
-  Article.create!(article_data)
+articles.each do |article_data| 
+  unless Article.exists?(slug: article_data[:slug])  # 既存のデータを確認
+    Article.find_or_create_by!(id: article_data[:id]) do |article|
+      article.title = article_data[:title]
+      article.slug = article_data[:slug]
+      article.status = article_data[:status]
+      article.author = article_data[:author]
+      article.published_at = article_data[:published_at]
+      article.digest = article_data[:digest]
+    end
+  end
 end
