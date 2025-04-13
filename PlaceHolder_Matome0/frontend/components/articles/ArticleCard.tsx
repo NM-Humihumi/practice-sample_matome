@@ -18,7 +18,10 @@ interface ArticleCardProps {
     discussion_messages?: Array<{
       content: string;
       position: number;
-    }>;
+      speaker?: {
+        display_name: string;
+      };
+    }>[];
   };
 }
 
@@ -36,8 +39,8 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <div className="border rounded-xl p-4 mb-4 bg-white shadow-md">
-      <div className="flex">
-        {/* 左側：本文 */}
+      <div className="flex flex-col md:flex-row">
+        {/* 本文（左側） */}
         <div className="flex-1 pr-4">
           <div className="flex justify-between items-start mb-1">
             <h2 className="text-lg font-bold">{article.title}</h2>
@@ -57,25 +60,50 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           <time className="text-xs text-gray-500">{formattedDate}</time>
         </div>
 
-        {/* 右側：コメント風ボックス */}
-        <div className="flex flex-col space-y-2 text-sm w-1/3">
-          {comments.map((msg, idx) => (
-            <div
-              key={idx}
-              className={`border rounded-md px-2 py-1 ${
-                idx % 2 === 0
-                  ? "border-blue-400 text-blue-800"
-                  : "border-red-400 text-red-700"
-              }`}
-            >
-              {msg.content.split("\n").map((line, i) => (
-                <div key={i}>{line}</div>
-              ))}
-            </div>
-          ))}
+        {/* コメント（右側・固定幅、上位置調整） */}
+        <div className="w-full md:w-[500px] shrink-0 space-y-2 mt-4 md:mt-0 self-start md:mt-[28px]">
+          {comments.map((msg, idx) => {
+            const isLeft = idx % 2 === 0;
+            const speaker = msg.speaker || { display_name: "AI" };
 
-          {/* コメント下にマーカー（仮） */}
-          <div className="text-right pr-2 text-xl text-red-500">○</div>
+            return (
+              <div key={idx} className="flex items-start space-x-2">
+                {/* 左アイコン */}
+                {isLeft && (
+                  <div className="flex flex-col items-center w-12 shrink-0">
+                    <div className="w-10 h-10 rounded-full border-2 border-blue-500"></div>
+                    <div className="text-[10px] text-blue-600 mt-1 leading-none">
+                      {speaker.display_name}
+                    </div>
+                  </div>
+                )}
+
+                {/* ダミー空白 for 揃え */}
+                {!isLeft && <div className="w-12 shrink-0" />}
+
+                {/* 吹き出し */}
+                <div
+                  className={`border px-4 py-2 rounded-xl text-sm leading-snug max-w-[80%] line-clamp-2 ${
+                    isLeft
+                      ? "border-blue-400 text-blue-800"
+                      : "border-red-400 text-red-700"
+                  }`}
+                >
+                  {msg.content}
+                </div>
+
+                {/* 右アイコン */}
+                {!isLeft && (
+                  <div className="flex flex-col items-center w-12 shrink-0">
+                    <div className="w-10 h-10 rounded-full border-2 border-red-500"></div>
+                    <div className="text-[10px] text-red-600 mt-1 leading-none">
+                      {speaker.display_name}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

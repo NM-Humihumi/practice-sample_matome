@@ -37,7 +37,12 @@ module Api
             discussion: {
               include: {
                 discussion_messages: {
-                  only: [:content, :position]
+                  only: [:content, :position],
+                  include: {
+                    speaker: {
+                      only: [:display_name, :default_icon_url]
+                    }
+                  }
                 }
               }
             }

@@ -18,7 +18,7 @@ export default function Home({ articles }: { articles: Article[] }) {
   return (
     <Layout>
       <NextSeo title="記事一覧" />
-      <div className="max-w-3xl mx-auto py-8">
+      <div className="max-w-5xl mx-auto px-4 pt-4">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}
