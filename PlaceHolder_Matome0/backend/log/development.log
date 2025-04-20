@@ -239,3 +239,464 @@ FOREIGN KEY ("article_id")
   [1m[36mArticleMetadata Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
   [1m[36mCACHE Article Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
   [1m[36mCACHE ArticleMetadata Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.7ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.7ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.6ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.6ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+News generation task executed at 2025-04-19 16:05:02 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.3ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+News generation task executed at 2025-04-19 17:00:39 +0000
+News generation task executed at 2025-04-19 17:48:12 +0000
+News generation task executed at 2025-04-19 17:48:54 +0000
+News generation task executed at 2025-04-19 18:00:35 +0000
+News generation task executed at 2025-04-19 19:00:27 +0000
+News generation task executed at 2025-04-19 21:00:24 +0000
+News generation task executed at 2025-04-20 03:00:34 +0000
+News generation task executed at 2025-04-20 05:01:24 +0000
+News generation task executed at 2025-04-20 06:00:54 +0000
+News generation task executed at 2025-04-20 08:00:18 +0000
+News generation task executed at 2025-04-20 08:59:34 +0000
+News generation task executed at 2025-04-20 09:00:14 +0000
+News generation task executed at 2025-04-20 10:00:13 +0000
+News generation task executed at 2025-04-20 11:00:19 +0000
+News generation task executed at 2025-04-20 12:00:28 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateMapTiles (20250420000000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "map_tiles" ("id" bigserial primary key, "x" integer NOT NULL, "y" integer NOT NULL, "name" character varying, "tile_type" character varying NOT NULL, "owner" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_map_tiles_on_x_and_y" ON "map_tiles" ("x", "y")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250420000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateMapHistories (20250420000001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "map_histories" ("id" bigserial primary key, "map_tile_id" bigint NOT NULL, "change_type" character varying NOT NULL, "article_id" bigint, "changed_at" timestamp NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7e337a068e"
+FOREIGN KEY ("map_tile_id")
+  REFERENCES "map_tiles" ("id")
+, CONSTRAINT "fk_rails_885a4f3f52"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_map_histories_on_map_tile_id" ON "map_histories" ("map_tile_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_map_histories_on_article_id" ON "map_histories" ("article_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250420000001') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.7ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+News generation task executed at 2025-04-20 13:00:25 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArticleCategory Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 9], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 1], ["category_id", 4], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 5], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 2], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 1], ["LIMIT", 1]]
+  [1m[36mArticleCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "article_categories" WHERE "article_categories"."article_id" = $1 AND "article_categories"."category_id" = $2 LIMIT $3[0m  [["article_id", 3], ["category_id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "openai-gpt5-release-summer"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "amazon-ai-logistics-boost"], ["LIMIT", 1]]
+  [1m[36mArticle Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "articles" WHERE "articles"."slug" = $1 LIMIT $2[0m  [["slug", "eu-ai-law-adopted"], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "政治"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "経済"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "テクノロジー"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "エンタメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "スポーツ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "健康"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "ゲーム"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "アニメ"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "AI"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "芸能"], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "海外"], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.7ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Discussion Load (0.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 1], ["speaker_id", 1], ["position", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 2], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Load (0.1ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE "discussions"."article_id" = $1 LIMIT $2[0m  [["article_id", 3], ["LIMIT", 1]]
+  [1m[36mDiscussionMessage Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussion_messages" WHERE "discussion_messages"."discussion_id" = $1 AND "discussion_messages"."speaker_id" = $2 AND "discussion_messages"."position" = $3 LIMIT $4[0m  [["discussion_id", 3], ["speaker_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDiscussion Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "discussions" WHERE "discussions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSpeaker Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "Moody"], ["LIMIT", 1]]
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  [1m[36mArticleMetadata Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_metadata"[0m
+  [1m[36mCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mArticleCategory Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "article_categories"[0m
+  [1m[36mSpeaker Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mDiscussion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussions"[0m
+  [1m[36mDiscussionMessage Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "discussion_messages"[0m
+News generation task executed at 2025-04-20 14:00:36 +0000
+News generation task executed at 2025-04-20 14:06:08 +0000
+News generation task executed at 2025-04-20 14:08:42 +0000
+News generation task executed at 2025-04-20 14:09:42 +0000
+  [1m[36mMapTile Load (1.3ms)[0m  [1m[34mSELECT "map_tiles".* FROM "map_tiles"[0m
+  ↳ lib/tasks/generate_news.rake:19:in `map'
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+News generation task executed at 2025-04-20 15:25:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+News generation task executed at 2025-04-20 15:32:45 +0000

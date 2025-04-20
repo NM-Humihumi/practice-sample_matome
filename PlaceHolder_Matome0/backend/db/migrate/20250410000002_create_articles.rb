@@ -7,6 +7,7 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :author
       t.datetime :published_at
       t.text :digest, null: false
+      t.text :content
 
       t.timestamps
     end

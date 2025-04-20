@@ -1,0 +1,69 @@
+bundler: failed to load command: rake (/usr/local/bin/rake)
+/usr/local/lib/ruby/3.2.0/bundler/definition.rb:523:in `materialize': Could not find rails-7.1.5.1, sprockets-rails-3.4.2, pg-1.5.9, puma-6.6.0, importmap-rails-2.1.0, turbo-rails-2.0.13, stimulus-rails-1.3.4, jbuilder-2.13.0, bootsnap-1.18.4, rack-cors-2.0.2, google-cloud-storage-1.55.0, debug-1.9.2, web-console-4.2.1, whenever-1.0.0, capybara-3.39.2, selenium-webdriver-4.19.0, actioncable-7.1.5.1, actionmailbox-7.1.5.1, actionmailer-7.1.5.1, actionpack-7.1.5.1, actiontext-7.1.5.1, actionview-7.1.5.1, activejob-7.1.5.1, activemodel-7.1.5.1, activerecord-7.1.5.1, activestorage-7.1.5.1, activesupport-7.1.5.1, railties-7.1.5.1, sprockets-4.2.1, nio4r-2.7.4, msgpack-1.8.0, rack-3.1.12, addressable-2.8.7, digest-crc-0.7.0, google-apis-core-0.16.0, google-apis-iamcredentials_v1-0.22.0, google-apis-storage_v1-0.50.0, google-cloud-core-1.8.0, googleauth-1.14.0, mini_mime-1.1.5, irb-1.15.1, reline-0.6.0, bindex-0.8.1, chronic-0.10.2, nokogiri-1.18.7-x86_64-linux-gnu, rack-test-2.2.0, regexp_parser-2.10.0, xpath-3.2.0, base64-0.2.0, rexml-3.4.1, rubyzip-2.4.1, websocket-1.2.11, websocket-driver-0.7.7, zeitwerk-2.7.2, mail-2.8.1, net-imap-0.5.6, net-smtp-0.5.1, rails-dom-testing-2.2.0, racc-1.8.1, rack-session-2.1.0, rails-html-sanitizer-1.6.2, globalid-1.2.1, builder-3.3.0, erubi-1.13.1, timeout-0.4.3, marcel-1.0.4, benchmark-0.4.0, bigdecimal-3.1.9, concurrent-ruby-1.3.5, connection_pool-2.5.0, drb-2.2.1, i18n-1.14.7, logger-1.7.0, minitest-5.25.5, mutex_m-0.3.0, securerandom-0.4.1, tzinfo-2.0.6, rackup-2.2.1, rake-13.2.1, thor-1.3.2, public_suffix-6.0.1, httpclient-2.9.0, representable-3.2.0, retriable-3.1.2, google-cloud-env-2.2.2, google-cloud-errors-1.5.0, faraday-2.13.0, google-logging-utils-0.1.0, jwt-2.10.1, multi_json-1.15.0, os-1.1.4, signet-0.19.0, pp-0.6.2, rdoc-6.13.1, io-console-0.8.0, websocket-extensions-0.1.5, date-3.4.1, net-protocol-0.2.2, loofah-2.24.0, declarative-0.0.20, trailblazer-option-0.1.2, uber-0.1.0, faraday-net_http-3.4.0, json-2.10.2, prettyprint-0.2.0, psych-5.2.3, crass-1.0.6, net-http-0.6.0, stringio-3.1.6, uri-1.0.3 in locally installed gems (Bundler::GemNotFound)
+	from /usr/local/lib/ruby/3.2.0/bundler/definition.rb:186:in `specs'
+	from /usr/local/lib/ruby/3.2.0/bundler/definition.rb:243:in `specs_for'
+	from /usr/local/lib/ruby/3.2.0/bundler/runtime.rb:18:in `setup'
+	from /usr/local/lib/ruby/3.2.0/bundler.rb:170:in `setup'
+	from /usr/local/lib/ruby/3.2.0/bundler/setup.rb:20:in `block in <top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/ui/shell.rb:159:in `with_level'
+	from /usr/local/lib/ruby/3.2.0/bundler/ui/shell.rb:111:in `silence'
+	from /usr/local/lib/ruby/3.2.0/bundler/setup.rb:20:in `<top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:56:in `require_relative'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:56:in `kernel_load'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:23:in `run'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:491:in `exec'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:34:in `dispatch'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:28:in `start'
+	from /usr/local/lib/ruby/gems/3.2.0/gems/bundler-2.4.1/libexec/bundle:45:in `block in <top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /usr/local/lib/ruby/gems/3.2.0/gems/bundler-2.4.1/libexec/bundle:33:in `<top (required)>'
+	from /usr/local/bin/bundle:25:in `load'
+	from /usr/local/bin/bundle:25:in `<main>'
+bundler: failed to load command: rake (/usr/local/bin/rake)
+/usr/local/lib/ruby/3.2.0/bundler/definition.rb:523:in `materialize': Could not find rails-7.1.5.1, sprockets-rails-3.4.2, pg-1.5.9, puma-6.6.0, importmap-rails-2.1.0, turbo-rails-2.0.13, stimulus-rails-1.3.4, jbuilder-2.13.0, bootsnap-1.18.4, rack-cors-2.0.2, google-cloud-storage-1.55.0, debug-1.9.2, web-console-4.2.1, whenever-1.0.0, capybara-3.39.2, selenium-webdriver-4.19.0, actioncable-7.1.5.1, actionmailbox-7.1.5.1, actionmailer-7.1.5.1, actionpack-7.1.5.1, actiontext-7.1.5.1, actionview-7.1.5.1, activejob-7.1.5.1, activemodel-7.1.5.1, activerecord-7.1.5.1, activestorage-7.1.5.1, activesupport-7.1.5.1, railties-7.1.5.1, sprockets-4.2.1, nio4r-2.7.4, msgpack-1.8.0, rack-3.1.12, addressable-2.8.7, digest-crc-0.7.0, google-apis-core-0.16.0, google-apis-iamcredentials_v1-0.22.0, google-apis-storage_v1-0.50.0, google-cloud-core-1.8.0, googleauth-1.14.0, mini_mime-1.1.5, irb-1.15.1, reline-0.6.0, bindex-0.8.1, chronic-0.10.2, nokogiri-1.18.7-x86_64-linux-gnu, rack-test-2.2.0, regexp_parser-2.10.0, xpath-3.2.0, base64-0.2.0, rexml-3.4.1, rubyzip-2.4.1, websocket-1.2.11, websocket-driver-0.7.7, zeitwerk-2.7.2, mail-2.8.1, net-imap-0.5.6, net-smtp-0.5.1, rails-dom-testing-2.2.0, racc-1.8.1, rack-session-2.1.0, rails-html-sanitizer-1.6.2, globalid-1.2.1, builder-3.3.0, erubi-1.13.1, timeout-0.4.3, marcel-1.0.4, benchmark-0.4.0, bigdecimal-3.1.9, concurrent-ruby-1.3.5, connection_pool-2.5.0, drb-2.2.1, i18n-1.14.7, logger-1.7.0, minitest-5.25.5, mutex_m-0.3.0, securerandom-0.4.1, tzinfo-2.0.6, rackup-2.2.1, rake-13.2.1, thor-1.3.2, public_suffix-6.0.1, httpclient-2.9.0, representable-3.2.0, retriable-3.1.2, google-cloud-env-2.2.2, google-cloud-errors-1.5.0, faraday-2.13.0, google-logging-utils-0.1.0, jwt-2.10.1, multi_json-1.15.0, os-1.1.4, signet-0.19.0, pp-0.6.2, rdoc-6.13.1, io-console-0.8.0, websocket-extensions-0.1.5, date-3.4.1, net-protocol-0.2.2, loofah-2.24.0, declarative-0.0.20, trailblazer-option-0.1.2, uber-0.1.0, faraday-net_http-3.4.0, json-2.10.2, prettyprint-0.2.0, psych-5.2.3, crass-1.0.6, net-http-0.6.0, stringio-3.1.6, uri-1.0.3 in locally installed gems (Bundler::GemNotFound)
+	from /usr/local/lib/ruby/3.2.0/bundler/definition.rb:186:in `specs'
+	from /usr/local/lib/ruby/3.2.0/bundler/definition.rb:243:in `specs_for'
+	from /usr/local/lib/ruby/3.2.0/bundler/runtime.rb:18:in `setup'
+	from /usr/local/lib/ruby/3.2.0/bundler.rb:170:in `setup'
+	from /usr/local/lib/ruby/3.2.0/bundler/setup.rb:20:in `block in <top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/ui/shell.rb:159:in `with_level'
+	from /usr/local/lib/ruby/3.2.0/bundler/ui/shell.rb:111:in `silence'
+	from /usr/local/lib/ruby/3.2.0/bundler/setup.rb:20:in `<top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:56:in `require_relative'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:56:in `kernel_load'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli/exec.rb:23:in `run'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:491:in `exec'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:34:in `dispatch'
+	from /usr/local/lib/ruby/3.2.0/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+	from /usr/local/lib/ruby/3.2.0/bundler/cli.rb:28:in `start'
+	from /usr/local/lib/ruby/gems/3.2.0/gems/bundler-2.4.1/libexec/bundle:45:in `block in <top (required)>'
+	from /usr/local/lib/ruby/3.2.0/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+	from /usr/local/lib/ruby/gems/3.2.0/gems/bundler-2.4.1/libexec/bundle:33:in `<top (required)>'
+	from /usr/local/bin/bundle:25:in `load'
+	from /usr/local/bin/bundle:25:in `<main>'
+rake aborted!
+Don't know how to build task 'generate:news' (See the list of available tasks with `rake --tasks`)
+Did you mean?  generate_news:run
+/usr/local/bundle/ruby/3.2.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/bin/bundle:25:in `load'
+/usr/local/bin/bundle:25:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+TypeError: no implicit conversion of nil into String (TypeError)
+
+    api_key = File.read(api_key_path).strip
+                        ^^^^^^^^^^^^
+/rails/lib/tasks/generate_news.rake:11:in `read'
+/rails/lib/tasks/generate_news.rake:11:in `block (2 levels) in <main>'
+/usr/local/bundle/ruby/3.2.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/bin/bundle:25:in `load'
+/usr/local/bin/bundle:25:in `<main>'
+Tasks: TOP => generate_news:run
+(See full trace by running task with --trace)

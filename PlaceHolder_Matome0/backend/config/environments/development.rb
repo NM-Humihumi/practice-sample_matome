@@ -80,6 +80,7 @@ Rails.application.configure do
   config.hosts << "localhost"
   config.hosts << "127.0.0.1"
 
+  # GCSの画像保存先バケット名
   config.gcs_bucket_name = "digest-with-ai-dev-images"
 
   # Configure CORS

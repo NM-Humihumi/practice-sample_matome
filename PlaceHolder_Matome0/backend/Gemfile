@@ -50,6 +50,10 @@ gem 'rack-cors', '~> 2.0'
 # GCSへの接続に必要なgem
 gem "google-cloud-storage", require: "google/cloud/storage"
 
+# OpenAIのAPIを利用するためのgem
+# Gemfile
+gem 'ruby-openai', '~> 6.4'   # 例：2025‑04 時点の最新版
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9.0", platforms: %i[ mri windows ]
@@ -64,6 +68,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+# スケジューラー管理用のGem。crontabの設定を自動生成してくれる。
+group :development do
+  gem 'whenever'
 end
 
 group :test do
