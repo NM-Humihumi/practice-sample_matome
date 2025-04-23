@@ -18,6 +18,10 @@ class Article < ApplicationRecord
     joins(:categories).where(categories: { name: name })
   }
 
+  def formatted_published_at
+    published_at.strftime("%Y年%m月%d日") if published_at
+  end
+
   private
 
   def generate_slug

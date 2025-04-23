@@ -67,3 +67,23 @@ TypeError: no implicit conversion of nil into String (TypeError)
 /usr/local/bin/bundle:25:in `<main>'
 Tasks: TOP => generate_news:run
 (See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::RecordInvalid: Validation failed: Slug can't be blank (ActiveRecord::RecordInvalid)
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/validations.rb:84:in `raise_validation_error'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/validations.rb:55:in `save!'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/transactions.rb:313:in `block in save!'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/transactions.rb:365:in `block in with_transaction_returning_status'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/connection_adapters/abstract/transaction.rb:535:in `block in within_new_transaction'
+/usr/local/bundle/ruby/3.2.0/gems/activesupport-7.1.5.1/lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/connection_adapters/abstract/transaction.rb:532:in `within_new_transaction'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/connection_adapters/abstract/database_statements.rb:344:in `transaction'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/transactions.rb:361:in `with_transaction_returning_status'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/transactions.rb:313:in `save!'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/suppressor.rb:56:in `save!'
+/usr/local/bundle/ruby/3.2.0/gems/activerecord-7.1.5.1/lib/active_record/persistence.rb:55:in `create!'
+/rails/lib/tasks/generate_news.rake:63:in `block (2 levels) in <main>'
+/usr/local/bundle/ruby/3.2.0/gems/rake-13.2.1/exe/rake:27:in `<top (required)>'
+/usr/local/bin/bundle:25:in `load'
+/usr/local/bin/bundle:25:in `<main>'
+Tasks: TOP => generate_news:run
+(See full trace by running task with --trace)

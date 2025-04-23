@@ -1,4 +1,3 @@
-
 services:
   db:
     image: postgres:15
@@ -10,31 +9,34 @@ services:
       POSTGRES_DB: backend_development
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./backend
-    command: >
-      sh -c "
-        bundle install --jobs 4 --retry 3 &&
-        bundle exec whenever --update-crontab &&
-        cron &&
-        rm -f tmp/pids/server.pid &&
-        service cron start &&
-        bundle exec rails db:prepare &&
-        bundle exec rails server -p 3001 -b '0.0.0.0'
-      "
     volumes:
       - ./backend:/rails
     working_dir: /rails
     ports:
       - "3001:3001"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       DATABASE_URL: postgres://postgres:password@db:5432/backend_development
       GOOGLE_APPLICATION_CREDENTIALS: /rails/config/credential/digest-with-ai-54977c53d6a2.json
       RAILS_ENV: development
       OPENAI_API_KEY_PATH: /rails/config/credential/openai_news_generation_api_key.txt
+      RAILS_PID: /tmp/rails/pids/server.pid
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s  # サーバー起動を長めに待つ
 
   frontend:
     build: ./frontend
@@ -45,7 +47,10 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    environment:
+      NEXT_PUBLIC_BACKEND_URL: http://backend:3001
 
 volumes:
   postgres_data:

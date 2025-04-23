@@ -53,20 +53,21 @@ module Api
 
       # GET /api/v1/articles/1
       def show
-        render json: @article.as_json(
-          only: [:id, :title, :slug, :published_at, :digest],
-          include: {
-            article_metadata: {},
-            article_categories: { only: [:id, :name, :slug] },
-            discussion: {
-              include: {
-                discussion_messages: {
-                  only: [:content, :position]
-                }
-              }
-            }
-          }
-        )
+render json: @article.as_json(
+  only: [:id, :title, :slug, :digest],
+  methods: [:formatted_published_at],
+  include: {
+    article_metadata: {},
+    article_categories: { only: [:id, :name, :slug] },
+    discussion: {
+      include: {
+        discussion_messages: {
+          only: [:content, :position]
+        }
+      }
+    }
+  }
+)
       end
 
       # POST /api/v1/articles

@@ -2,7 +2,6 @@
 
 articles = [
   {
-    id: 1,
     title: 'OpenAIがGPT-5を今夏リリース予定',
     slug: 'openai-gpt5-release-summer',
     status: 'published',
@@ -15,7 +14,6 @@ articles = [
     TEXT
   },
   {
-    id: 2,
     title: 'Amazon、AI活用で物流効率20%向上',
     slug: 'amazon-ai-logistics-boost',
     status: 'published',
@@ -28,7 +26,6 @@ articles = [
     TEXT
   },
   {
-    id: 3,
     title: 'EU、AI法案を正式採択',
     slug: 'eu-ai-law-adopted',
     status: 'published',

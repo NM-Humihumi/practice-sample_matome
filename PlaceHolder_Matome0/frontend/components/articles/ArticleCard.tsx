@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { ja } from "date-fns/locale";
 
 interface ArticleCardProps {
@@ -25,10 +25,20 @@ interface ArticleCardProps {
   };
 }
 
+export function formatPublishedAt(publishedAt: string | null) {
+  if (!publishedAt) return "未公開"
+
+  const date = parseISO(publishedAt)
+  // UTCから日本時間へ変換（+9時間）
+  const jstDate = new Date(date.getTime() + 9 * 60 * 60 * 1000)
+
+  return format(jstDate, "yyyy年MM月dd日", { locale: ja })
+}
+
 export default function ArticleCard({ article }: ArticleCardProps) {
   const formattedDate =
-    article.publishedAt && !isNaN(new Date(article.publishedAt).getTime())
-      ? format(new Date(article.publishedAt), "yyyy年MM月dd日", { locale: ja })
+    article.publishedAt
+      ? formatPublishedAt(article.publishedAt)
       : "未公開";
 
   const comments = article.discussion_messages
